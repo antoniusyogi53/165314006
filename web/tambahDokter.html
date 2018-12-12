@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<title>165314006RS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, html {height: 100%}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+.menu {display: none}
+.bgimg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("rss.jpg");
+    min-height: 100%;
+}
+.w3-bar .w3-button {
+    padding: 10px;
+}
+</style>
+<body>
+
+</style>
+<body>
+
+<div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+  <a href="#" class="w3-bar-item w3-button">BERANDA</a>
+  <div class="w3-dropdown-hover w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar"">
+  <button class="w3-button" title="Notifications">LAYANAN<i class="fa fa-caret-down"></i></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+      <a href="http://it-projects.usd.ac.id/~165314006/l1" class="w3-bar-item w3-button">PENDAFTAR PASIEN</a>
+      <a href="http://it-projects.usd.ac.id/~165314006/l2" class="w3-bar-item w3-button">TAMBAH KLINIK</a>
+      <a href="http://it-projects.usd.ac.id/~165314006/l3" class="w3-bar-item w3-button">TAMBAH DOKTER</a>
+      <a href="http://it-projects.usd.ac.id/~165314006/l4" class="w3-bar-item w3-button">PENDAFTARAN ANTRIAN</a>
+      <a href="http://it-projects.usd.ac.id/~165314006/caripasien" class="w3-bar-item w3-button">CARI PASIEN</a>
+      <a href="http://it-projects.usd.ac.id/~165314006/dokterspesial" class="w3-bar-item w3-button">DOKTER SPESIALIS</a>
+      <a href="http://it-projects.usd.ac.id/~165314006/klinikspesial" class="w3-bar-item w3-button">KLINIK SPESIALIS</a>
+      <a href="http://it-projects.usd.ac.id/~165314006/listantrian" class="w3-bar-item w3-button">LIST ANTRIAN</a>
+    </div>
+</div>
+    <a href="#tentang" class="w3-bar-item w3-button">TENTANG</a>
+    <a href="#hubungi" class="w3-bar-item w3-button">HUBUNGI</a>
+    <a href="http://it-projects.usd.ac.id/~165314006/lokasi" class="w3-bar-item w3-button">LOKASI</a>
+  </div>
+</div>
+
+
+<header class="bgimg w3-display-container w3-grayscale-min" id="beranda">
+  <div class="w3-display-middle w3-center" style="padding:48px">
+                        <span class="w3-text-black w3-hide-small" style="font-size:60px"><b>Tambah Dokter</b></span>
+                        <form onsubmit="return make_json(this);" method="POST">
+                            <span class="w3-text-black w3-hide-small" style="font-size:25px"><table>
+                                <tr><td><b>Nama</b></td> <td>:</td> <td><input type="text" name="nama" value=""/></td></tr>
+                                <tr><td><b>Spesialis</b></td> <td>:</td> <td><input type="text" name="spesialis" value=""/></td></tr>
+                            </table>
+                            <br></br>
+                            <b><input type="submit" value="Tambah"/></b></span>
+                        </form>
+
+                        <pre id="berhasil">
+                        </pre></div>
+
+                    <script>
+                        function make_json(form) {
+                            var json = {
+                                "nama": form.nama.value,
+                                "spesialis": form.spesialis.value
+                            };
+                            var html = JSON.stringify(json, 0, 100);
+
+                            var Url = "http://202.94.83.190:8080/165314006_RS1/webresources/Dokter/addDokter";
+                            var xhr = new XMLHttpRequest();
+                            xhr.open('POST', Url, false);
+                            xhr.setRequestHeader("Content-type", "application/json");
+                            xhr.send(html);
+                            document.getElementById("berhasil").innerHTML = "Pendaftaran Berhasil";
+                            return false;
+                        }
+
+                    </script>
+                </div>
+</header>
+
+<!DOCTYPE html>
+<html>
+<title>165314006RS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, html {height: 100%}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+.menu {display: none}
+.bgimg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("rss.jpg");
+    min-height: 100%;
+}
+.w3-bar .w3-button {
+    padding: 10px;
+}
+</style>
+<body>
+
+</style>
+<body>
+
+<div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+  <a href="#" class="w3-bar-item w3-button">BERANDA</a>
+  <div class="w3-dropdown-hover w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar"">
+  <button class="w3-button" title="Notifications">LAYANAN<i class="fa fa-caret-down"></i></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+      <a href="http://it-projects.usd.ac.id/~165314006/l1" class="w3-bar-item w3-button">PENDAFTAR PASIEN</a>
+      <a href="http://it-projects.usd.ac.id/~165314006/l2" class="w3-bar-item w3-button">TAMBAH KLINIK</a>
+      <a href="http://it-projects.usd.ac.id/~165314006/l3" class="w3-bar-item w3-button">TAMBAH DOKTER</a>
+      <a href="http://it-projects.usd.ac.id/~165314006/l4" class="w3-bar-item w3-button">PENDAFTARAN ANTRIAN</a>
+      <a href="http://it-projects.usd.ac.id/~165314006/caripasien" class="w3-bar-item w3-button">CARI PASIEN</a>
+      <a href="http://it-projects.usd.ac.id/~165314006/dokterspesial" class="w3-bar-item w3-button">DOKTER SPESIALIS</a>
+      <a href="http://it-projects.usd.ac.id/~165314006/klinikspesial" class="w3-bar-item w3-button">KLINIK SPESIALIS</a>
+      <a href="http://it-projects.usd.ac.id/~165314006/listantrian" class="w3-bar-item w3-button">LIST ANTRIAN</a>
+    </div>
+</div>
+    <a href="#tentang" class="w3-bar-item w3-button">TENTANG</a>
+    <a href="#hubungi" class="w3-bar-item w3-button">HUBUNGI</a>
+    <a href="http://it-projects.usd.ac.id/~165314006/lokasi" class="w3-bar-item w3-button">LOKASI</a>
+  </div>
+</div>

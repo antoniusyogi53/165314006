@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<title>165314006RS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, html {height: 100%}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+.menu {display: none}
+.bgimg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("rss.jpg");
+    min-height: 100%;
+}
+.w3-bar .w3-button {
+    padding: 10px;
+}
+</style>
+<body>
+
+</style>
+<body>
+
+<div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+  <a href="#" class="w3-bar-item w3-button">BERANDA</a>
+  <div class="w3-dropdown-hover w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar"">
+  <button class="w3-button" title="Notifications">LAYANAN<i class="fa fa-caret-down"></i></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+      <a href="http://it-projects.usd.ac.id/~165314006/l1" class="w3-bar-item w3-button">PENDAFTAR PASIEN</a>
+      <a href="http://it-projects.usd.ac.id/~165314006/l2" class="w3-bar-item w3-button">TAMBAH KLINIK</a>
+      <a href="http://it-projects.usd.ac.id/~165314006/l3" class="w3-bar-item w3-button">TAMBAH DOKTER</a>
+      <a href="http://it-projects.usd.ac.id/~165314006/l4" class="w3-bar-item w3-button">PENDAFTARAN ANTRIAN</a>
+      <a href="http://it-projects.usd.ac.id/~165314006/caripasien" class="w3-bar-item w3-button">CARI PASIEN</a>
+      <a href="http://it-projects.usd.ac.id/~165314006/dokterspesial" class="w3-bar-item w3-button">DOKTER SPESIALIS</a>
+      <a href="http://it-projects.usd.ac.id/~165314006/klinikspesial" class="w3-bar-item w3-button">KLINIK SPESIALIS</a>
+      <a href="http://it-projects.usd.ac.id/~165314006/listantrian" class="w3-bar-item w3-button">LIST ANTRIAN</a>
+    </div>
+</div>
+    <a href="#tentang" class="w3-bar-item w3-button">TENTANG</a>
+    <a href="#hubungi" class="w3-bar-item w3-button">HUBUNGI</a>
+    <a href="http://it-projects.usd.ac.id/~165314006/lokasi" class="w3-bar-item w3-button">LOKASI</a>
+  </div>
+</div>
+
+
+<header class="bgimg w3-display-container w3-grayscale-min" id="beranda">
+  <div class="w3-display-middle w3-center" style="padding:48px">
+                        <div class="form-group">
+                            <span class="w3-text-black w3-hide-small" style="font-size:60px"><b>Daftar Klinik</b></span>
+                            <div id="outtable">
+				<span class="w3-text-black w3-hide-small" style="font-size:23px">
+                                <button type="button" onclick="loadDoc()" id="myselect"><b>Cari</b></button></span>
+                                <div id="scrolltable"> 
+                                    <p id="demo"></p>
+                                    <script>
+                                        function loadDoc() {
+
+                                            var xmlhttp = new XMLHttpRequest();
+                                            var url = "http://202.94.83.190:8080/165314006_RS1/webresources/Klinik";
+
+                                            xmlhttp.onreadystatechange = function () {
+                                                if (this.readyState == 4 && this.status == 200) {
+                                                    myFunction(this.responseText);
+                                                }
+                                            }
+                                            xmlhttp.open("GET", url, true);
+                                            xmlhttp.send();
+
+                                            function myFunction(response) {
+                                                var arr = JSON.parse(response);
+                                                var i;
+                                                var out = "<table border='1'> <tr><td>Id Klinik</td><td>Nama</td><td>spesialis</td></tr>";
+
+                                                for (i = 0; i < arr.length; i++) {
+                                                    out += "<tr><td>" +
+                                                            arr[i].idKlinik +
+                                                            "</td><td>" +
+                                                            arr[i].nama +
+                                                            "</td><td>" + arr[i].spesialis + "</tr>";
+                                                }
+                                                out += "</table>";
+                                                document.getElementById("demo").innerHTML = out;
+                                            }
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+</header>
+
+
+
+<div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="tentang">
+  <div class="w3-content">
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Tentang</h1>
+    	<img src="rs3.jpg" style="width:150px" class="w3-circle w3-center" alt="RS"> 
+	<img src="rs5.jpg" style="width:150px" class="w3-circle w3-center" alt="RS">
+        <img src="rs4.jpg" style="width:150px" class="w3-circle w3-cneter" alt="RS">
+        <img src="rs6.jpg" style="width:150px" class="w3-circle w3-cneter" alt="RS">  
+        <img src="rs7.jpg" style="width:150px" class="w3-circle w3-cneter" alt="RS">  
+        <img src="rs8.jpg" style="width:150px" class="w3-circle w3-cneter" alt="RS">  
+    	<p>Rumah sakit sebagai sarana kesehatan yang memberikan pelayanan kesehatan kepada masyarakat
+	yang memiliki peran sangat strategis dalam mempercepat peningkatan derajat kesehatan kesehatan masyarakat.
+	Rumah sakit dituntut untuk memberikan pelayanan yang bermutu sesuai dengan standar yang ditetapkan dan dapat dijangkau
+	seluruh lapisan masyarakat.</p>   
+        <i class="fa fa-map-marker" style="width:30px"></i>Daerah Istimewa Yogyakarta, ID<br>
+      </div>
+  </div>
+</div>
+</div>
+
+
+<div class="w3-container w3-padding-64 w3-blue-grey w3-grayscale-min w3-xlarge">
+  <div class="w3-content" id="hubungi">
+</br><br>
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Hubungi</h1>
+    <p>Temukan rumah sakit berdasarkan alamat tempat atau cepat bisa hubungi di nomor telp +(62) 8213-8378-853</p>
+    <p>Kami menghimbau kepada setiap pengunjung rumah sakit meninggalkan jejak berupa tanggapan
+	menginai website ini dengan menuliskan beberapa masukkan kritik dan saran yang dapat ditulis dikolom bawah.</p>
+    <p class="w3-xxlarge">Tinggalkan kritik dan saran anda disini:</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Nama" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Tanggal" required name="date" value="2017-11-16T20:00"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Ketik Disini...." required name="Message"></p>
+      <p><button class="w3-button w3-light-grey w3-block" type="submit">KIRIM MASUKKAN</button></p>
+    </form>
+  </div>
+</div>
+
+
+<footer class="w3-center w3-black w3-padding-48 w3-xxlarge">
+  <a class="w3-button w3-large w3-teal" href="http://www.facebook.com/kuroko.the.killers" title="Facebook"><i class="fa fa-facebook"></i></a>
+  <a class="w3-button w3-large w3-teal" href="http://www.twitter.com/an_yogi53" title="Twitter"><i class="fa fa-twitter"></i></a>
+  <a class="w3-button w3-large w3-teal" href="http://www.google.com/login" title="Google +"><i class="fa fa-google-plus"></i></a>
+  <a class="w3-button w3-large w3-teal" href="http://www.instagram.com/an_yogi53" title="Google +"><i class="fa fa-instagram"></i></a>
+  <a class="w3-button w3-large w3-teal w3-hide-small" href="http://www.linkedin.com" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+  <p>Created by Antonius Yogi</a></p>
+  </div>
+</footer>
+</body>
+</html>
